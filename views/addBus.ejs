@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <div class="header-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="flexit">
+                            <div class="header-details-content"><span><i class="fas fa-phone-alt"></i></span>9861334045</div>
+                            <div class="header-details-content"><span><i class="fas fa-envelope"></i></span>info@bookit.com</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                       <a href="#"><i class="fab fa-facebook"></i></a>
+                       <a href="#"><i class="fab fa-instagram"></i></a>
+                       <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+        <div class="result-content">
+            <nav class="rest-nav">
+                <div class="container">
+                    <ul>
+                        <a href="/">
+                            <li>Home</li>
+                        </a>
+                        <a href="/api/user/register">
+                            <li>Register</li>
+                        </a>
+                        <a href="/api/user/login">
+                            <li>Login</li>
+                        </a>
+                        <a href="/api/user/logout">
+                            <li>Logout</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container main-card">
+               <div class="row">
+                   <div class="col-md-4">
+                        <div class="title">
+                            <h5>Add Bus</h5>
+                            <form method="post" action="/api/user/addBus">
+                                <input type="hidden" class="form-control" id="hiddendata" name="user" value="<%=username %>">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Travel From</label>
+                                    <input type="text" class="form-control" placeholder="From" name="from" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Travel To</label>
+                                    <input type="text" class="form-control" placeholder="To" name="to" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Time</label>
+                                    <input type="text" class="form-control" placeholder="18:00" name="time" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Date</label>
+                                    <input type="date" class="form-control" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Bus Type</label>
+                                    <input type="text" class="form-control" placeholder="Bus Type" name="bustype" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Duration</label>
+                                    <input type="text" class="form-control" placeholder="Duration" name="duration" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Fare</label>
+                                    <input type="text" class="form-control" placeholder="Fare" name="fare" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Departure Time</label>
+                                    <input type="text" class="form-control" placeholder="Departure Time" name="departureTime" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Departure place</label>
+                                    <input type="text" class="form-control" placeholder="Departure Place" name="departurePlace" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Dropping place</label>
+                                    <input type="text" class="form-control" placeholder="Dropping Place" name="dropping" required>
+                                </div>
+
+                                <br>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                   </div>
+                 </div>
+            </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+        <script>
+            function seatcolor(id){
+                let element = document.getElementById(id);
+                if(element.style.color == "grey"){
+                    element.style.color = "green"
+                }else{
+                    element.style.color = "grey"
+                }
+                
+
+            }
+        </script>
+</body>
+</html>

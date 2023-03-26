@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <div class="header-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="flexit">
+                            <div class="header-details-content"><span><i class="fas fa-phone-alt"></i></span>9861334045</div>
+                            <div class="header-details-content"><span><i class="fas fa-envelope"></i></span>info@bookit.com</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                       <a href="#"><i class="fab fa-facebook"></i></a>
+                       <a href="#"><i class="fab fa-instagram"></i></a>
+                       <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+        <div class="result-content">
+            <nav class="rest-nav">
+                <div class="container">
+                    <ul>
+                        <a href="/">
+                            <li>Home</li>
+                        </a>
+                        <a href="/api/user/register">
+                            <li>Register</li>
+                        </a>
+                        <a href="/api/user/login">
+                            <li>Login</li>
+                        </a>
+                        <a href="/api/user/logout">
+                            <li>Logout</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container main-card">
+            <div class="search-bar alt">
+                <form method="get" action="/api/user/search">
+                    <div class="row">
+                        <div class="col-md-3 flexit">
+                            <div class="col-md-2 search-bar-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="col-md-12">
+                                    <small>Where are you from?</small>
+                                </div>
+                                <div class="col-md-12">
+            
+                                    <select name="from">
+                                        <option value="kathmandu">Kathmandu</option>
+                                        <option value="pokhara">Pokhara</option>
+                                        <option value="birgunj">Birgunj</option>
+                                        <option value="chitwan">Chitwan</option>
+                                    </select>
+            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 flexit">
+                            <div class="col-md-2 search-bar-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="col-md-12">
+                                    <small>Where are you going?</small>
+                                </div>
+                                <div class="col-md-12">
+            
+                                    <select name="to">
+                                        <option value="kathmandu">Kathmandu</option>
+                                        <option value="pokhara">Pokhara</option>
+                                        <option value="birgunj">Birgunj</option>
+                                        <option value="chitwan">Chitwan</option>
+                                    </select>
+            
+            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 flexit">
+                            <div class="col-md-2 search-bar-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="col-md-12">
+                                    <small>When are you going?</small>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="date" placeholder="Date" name="date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-primary" type="submit">Find me ticket</button>
+                        </div>
+            
+                    </div>
+                </form>
+            </div>
+            </div>
+            
+            <div class="container main-card">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <% busses.forEach(function(buss){ if(buss.user==username){ %>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-<%= buss.id %>" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-<%= buss.id %>">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-1 cardimage">
+                                            <div>Travels</div>
+                                            <strong>
+                                                <%= buss.user %> 
+                                            </strong>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>Duration</div>
+                                            <strong>
+                                                <%= buss.duration %> hrs
+                                            </strong>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>Bus Type</div>
+                                            <strong>
+                                                <%= buss.bustype %>
+                                            </strong>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>Departure | Shift</div>
+                                            <strong>
+                                                <%= buss.time %>
+                                            </strong>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>Date</div>
+                                            <strong>
+                                                <%= buss.date %>
+                                            </strong>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div>Fare</div>
+                                            <strong id="<%= buss.id %>_fare">
+                                                <%= buss.fare %>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-<%= buss.id %>" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <div class="row justify-content-center seats">
+                                        <div class="col-md-5">
+                                            <table class="seats" cellpadding="0">
+                                                <tr>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat1'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat1" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat2'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat2" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat3'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat3" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat4'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat4" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat5'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat5" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat6'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat6" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat7'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat7" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat8'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat8" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat9'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat9" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat10'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat10" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat11'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat11" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat12'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat12" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat13'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat13" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat14'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat14" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat15'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat15" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat16'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat16" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat17'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat17" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat18'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat18" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat19'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat19" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat20'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat20" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat21'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat21" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat22'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat22" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat23'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat23" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                    <td><a class="btn empty rotate seat <% if(buss.booked.includes( buss.id.concat('_seat24'))){%>red<%}%>"
+                                                            id="<%= buss.id %>_seat24" onclick="seatcolor(this.id)"><i
+                                                                class="fas fa-couch"></i></a></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-3 col-xs-offset-4">
+                                            <div class="card mb-3 pricing">
+                                                <div class="card-header">
+                                                    <%= buss.from %> to <%= buss.to %>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <strong>Seat Booked:</strong>
+                                                            <strong>Boarding Point:</strong>
+                                                            <strong>Droping Point:</strong>
+                                                            <strong>Total Amount</strong>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <ul>
+                                                                <li><%= buss.booked.length %></li>
+                                                                <li>
+                                                                    <%= buss.departurePlace %>
+                                                                </li>
+                                                                <li><%= buss.dropping %></li>
+                                                                <li><%var x = Number( buss.booked.length )*Number( buss.fare )%> <%=x %></li>
+                                                                <li><%=bookings_details.busID %></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <table cellpadding="5">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Passenger Name
+                                                </th>
+                                                <th>
+                                                    Phone Number
+                                                </th>
+                                                <th>
+                                                    Seat Name
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <% bookings_details.forEach((booking)=>{
+                                            if(buss.id== booking.busID){ %>
+                                                <tr>
+                                                    <td>
+                                                        <%= booking.clientName %>
+                                                    </td>
+                                                    <td>
+                                                        <%= booking.phoneNumber %>
+                                                    </td>
+                                                    <td>
+                                                        <% var done =  booking.booked;
+                                                         done.forEach((seat)=>{
+                                                            var final = seat.substr(25,seat.length); %>
+                                                            <%= final %>
+                                                        <% }) %>
+                                                    </td>
+                                                </tr>
+                                          <%  }
+                                        }) %>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        <%}})%>
+            
+                </div>
+            </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+</html>

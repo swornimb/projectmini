@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
+:root {
+  --primary-color: #e8604c;
+}
+
+ul {
+  margin: 0px;
+}
+a {
+  text-decoration: none;
+}
+.header-details {
+  text-align: center;
+  background-color: #313041;
+  padding: 10px 0px;
+  color: #9d9d9d;
+}
+.header-details a {
+  color: white;
+  margin: 0px 10px;
+}
+.header-details a:hover {
+  color: var(--primary-color);
+}
+.flexit {
+  display: flex;
+}
+.header-details-content {
+  margin: 0px 20px;
+}
+.header-details-content span {
+  margin: 0px 20px;
+  color: var(--primary-color);
+}
+.main-content {
+  background-image: url("https://gaviaspreview.com/wp/tevily/wp-content/uploads/2021/10/slider-5.jpg");
+  min-height: 680px;
+}
+nav {
+  padding: 30px 0px;
+  background-color: #ffffff26;
+}
+nav ul a {
+  text-decoration: none;
+  list-style: none;
+  display: inline;
+  color: white;
+  margin: 0px 20px;
+  font-size: 17px;
+}
+nav ul a:hover {
+  color: #313041;
+}
+nav ul a li {
+  display: inline;
+}
+.rest-nav {
+  background-color: var(--primary-color);
+}
+.search-bar {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  margin: 40px 0px;
+  line-height: 1.2;
+}
+.search-bar select {
+  border: 0px;
+  font-weight: bold;
+}
+.search-bar:focus-visible {
+  border: 0px;
+}
+.search-bar .fas {
+  font-size: 30px;
+  text-align: right;
+  padding-top: 5px;
+}
+.search-bar .btn-primary {
+  width: 100%;
+  padding: 10px;
+}
+.search-bar-icon {
+  text-align: center;
+  color: var(--primary-color);
+}
+.col-md-3.flexit {
+  border-bottom: 1px solid grey;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+}
+.slogan {
+  font-size: 60px;
+  font-weight: bolder;
+  color: white;
+}
+.web-title {
+  font-family: comforter;
+  font-size: 100px;
+  color: var(--primary-color);
+  margin: 50px 0px 0px 0px;
+}
+.dropdown-toggle {
+  text-decoration: none;
+  color: black;
+}
+.dropdown-toggle:hover {
+  color: var(--primary-color);
+}
+
+input[type="date"] {
+  border: none;
+  font-weight: bold;
+}
+input[type="date"]:hover {
+  color: var(--primary-color);
+}
+.card-view {
+  padding: 20px 0px;
+}
+.card {
+  border-radius: 10px;
+}
+.main-card {
+  padding: 40px 0px;
+}
+.empty {
+  color: green;
+}
+.rotate {
+  -ms-transform: rotate(20deg); /* IE 9 */
+  transform: rotate(90deg);
+}
+.seat {
+  font-size: 25px;
+  text-align: center;
+}
+.seats {
+  margin: 25px auto;
+}
+.pricing {
+  margin-top: 30px;
+}
+.seats li {
+  list-style: none;
+}
+.seats .btn-primary {
+  width: 100%;
+}
+.accordion-button::after {
+  display: none;
+}
+.cardimage img {
+  width: 100%;
+  border-radius: 10px;
+}
+.accordion-button {
+  text-align: center;
+  color: var(--primary-color);
+}
+.accordion-button:not(.collapsed) {
+  color: #e8604c;
+  background-color: #313041;
+  box-shadow: none;
+}
+.accordion-button {
+  display: block;
+}
+.outer-form {
+  background-color: #f1f1f1;
+  padding: 40px;
+  border-radius: 20px;
+}
+.accordion-body table {
+  width: 100%;
+}
+.red {
+  color: #e8604c;
+  cursor: no-drop;
+  pointer-events: none;
+}
+a.dashboard_button {
+  background-color: #313041;
+  padding: 13px 0px;
+
+  display: block;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 1px;
+}
+a.dashboard_button:hover {
+  background-color: #e8604c;
+}
+.inner-text {
+  text-transform: capitalize;
+}
+.search-bar.alt {
+  border: 1px solid #313041;
+}
